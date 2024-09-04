@@ -1,0 +1,4 @@
+export TERMINAL=alacritty
+export GTK_THEME=Fluent-Dark-compact
+export GTK_ICON_THEME=ePapirus-Dark
+#export QT_QPA_PLATFORMTHEME=qt5ct

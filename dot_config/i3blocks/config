@@ -1,0 +1,51 @@
+[network_status]
+command=./network
+interval=2  # Adjust the interval as needed
+markup=pango
+
+[cpu_usage]
+label=<span color='#00FF00'>CPU</span> 
+markup=pango
+command=./cpu_usage
+#min_width=CPU: 100.00%
+color=#FFFF00
+color_good=#00FF00
+interval=2
+
+[ram_usage]
+label=<span color='#26f4ff'>MEM</span> 
+command=./memory
+interval=5
+markup=pango
+
+[brightness]
+command=./brightness
+interval=1
+#color=#FFFF00
+color=#EBCB8B  # Bright yellow
+markup=pango
+
+[volume]
+label=<span color='#00FF00'>VOL</span> 
+command=./volume
+interval=1
+#color=#FFFF00
+color=#dfff40  # Bright green
+separator_block_width=20 
+markup=pango
+
+[battery]
+command=./battery
+interval=10
+signal=1
+markup=pango
+#click-left=./toggle-power-profile
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=10
+color=#30fff8  # Bright blue
+
+
+
+

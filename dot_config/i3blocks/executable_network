@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Initialize variables
+ssid=""
+wlan_ip_address=""
+eth_ip_address=""
+
+# Get WLAN information if the device exists
+wlan_device="wlp1s0"
+if [ -n "$wlan_device" ]; then
+    ssid=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d ':' -f2)
+    wlan_ip_address=$(ip addr show dev "$wlan_device" | awk '/inet / {print $2}' | cut -d'/' -f1)
+fi
+
+# Get Ethernet information if the device exists
+eth_device="enp193s0f3u1"
+if [ -n "$eth_device" ]; then
+    eth_ip_address=$(ip addr show dev "$eth_device" | awk '/inet / {print $2}' | cut -d'/' -f1)
+fi
+
+status=""
+
+# Check if WLAN is connected
+if [ -n "$ssid" ]; then
+    status="<span color='#00FF00'>WLAN:</span> <span><span color='#FFA500'>[</span>$ssid<span color='#FFA500'>]</span></span> - <span color='#ff4ad5'>$wlan_ip_address</span>"
+elif [ -n "$eth_ip_address" ]; then
+    status="<span color='#00FF00'>ETH:</span> <span color='#ff4ad5'>$eth_ip_address</span>"
+else
+    status="<span color='#ff3333'>NO_CONNECTION</span>"
+fi
+
+# Print the status in Pango format
+echo -e "$status"
