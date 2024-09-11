@@ -119,7 +119,8 @@ alias pstop="LC_ALL="C" pg_ctl -D /opt/homebrew/var/postgresql@16 stop"
 
 #PATHS
 #export PATH=/opt/homebrew/bin:$PATH # Homebrew Path
-
+##GPG
+export GPG_TTY=$(tty)
 ##custom 
 export PATH=$HOME/.local/bin:$PATH
 

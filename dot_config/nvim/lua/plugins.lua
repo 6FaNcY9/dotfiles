@@ -140,7 +140,7 @@ require("lazy").setup({
 	-- Markdown plugin
 	{
 		"iamcco/markdown-preview.nvim",
-		build = "cd app && npm install",
+		build = "cd app && npm install && rm -f package-lock.json && git restore .",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 			vim.g["mkdp_theme"] = "light"
@@ -149,22 +149,26 @@ require("lazy").setup({
 		end,
 		ft = { "markdown" },
 	},
-{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {},
-    init = function ()
-    require("ibl").setup({
-      indent = {
-      char = "│",
-      },
-      scope= {
-        enabled=false
-      },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {},
+		init = function()
+			require("ibl").setup({
+				indent = {
+					char = "│",
+				},
+				scope = {
+					enabled = false,
+				},
 
-      -- char = "│",
-    --   filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-    --   show_trailing_blankline_indent = false,
-    --   show_current_context = false,
-    })
-end },
+				-- char = "│",
+				--   filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+				--   show_trailing_blankline_indent = false,
+				--   show_current_context = false,
+			})
+		end,
+	},
 	-- {
 	-- 	"echasnovski/mini.indentscope",
 	-- 	version = false, -- wait till new 0.7.0 release to put it back on semver
