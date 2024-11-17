@@ -4,16 +4,16 @@ interval=2  # Adjust the interval as needed
 markup=pango
 
 [cpu_usage]
-label=<span color='#00FF00'>CPU</span> 
+label=<span color='#71EE57'>CPU</span> 
 markup=pango
 command=./cpu_usage
 #min_width=CPU: 100.00%
-color=#FFFF00
+color=#E4814A
 color_good=#00FF00
 interval=2
 
 [ram_usage]
-label=<span color='#26f4ff'>MEM</span> 
+label=<span color='#75B5AA'>MEM</span> 
 command=./memory
 interval=5
 markup=pango
@@ -44,8 +44,14 @@ markup=pango
 [time]
 command=date '+%Y-%m-%d %H:%M'
 interval=10
-color=#30fff8  # Bright blue
+#color=#30fff8  # Bright blue
+color=#75B5AA
 
-
+[spacer]
+command=echo "" 
+interval=once
+separator=false
+color=#FFA500
+separator_block_width=20
 
 

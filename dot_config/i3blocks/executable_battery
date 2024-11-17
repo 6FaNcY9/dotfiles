@@ -14,7 +14,7 @@ elif [ "$battery_status" == "Charging," ]; then
     color="#00FF00"  # Green color while charging
 else
     battery_icon="BAT"
-    battery_icon="<span><span color='#52fff3'>[</span>Full<span color='#52fff3'>]</span></span>"
+    battery_icon="<span><span color='#FFA500'>[</span>Full<span color='#FFA500'>]</span></span>"
     color="#ff52dc"  # Default color
 fi
 
@@ -57,4 +57,4 @@ fi
 color1=$(get_profile_color "$current_profile")
 
 # Output the battery icon, percentage, and current power profile with appropriate color
-echo "<span foreground='$color'>$battery_icon <span color='#00FF00'>$battery_percentage% </span> <span foreground='$color1'>[$current_profile]</span></span>"
+echo "<span foreground='$color'>$battery_icon <span color='#00FF00'>$battery_percentage% </span><span foreground='$color1'><span color='#FFA500'>[</span>$current_profile<span color='#FFA500'>]</span></span></span>"

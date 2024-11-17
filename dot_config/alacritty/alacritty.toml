@@ -1,5 +1,5 @@
-import = [
-    "~/dotfiles/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
+general.import = [
+    "~/.config/alacritty/alacritty-theme/themes/ayu_dark.toml"
 ]
 
 [ env ]
@@ -22,3 +22,13 @@ size = 14
 
 #for video
 # size = 35.0
+
+
+[colors]
+#default
+[colors.primary]
+background = "#1C1C1C"
+
+
+
+

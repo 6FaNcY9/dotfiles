@@ -6,7 +6,7 @@ configuration {
     xoffset: 0;
     fixed-num-lines: true;
     show-icons: true;
-    terminal: "gnome-terminal";
+    terminal: "alacritty";
     ssh-client: "ssh";
     ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";
     run-command: "{cmd}";
@@ -28,11 +28,16 @@ configuration {
     max-history-size: 25;
     combi-hide-mode-prefix: false;
     combi-display-format: "{mode} {text}";
-    cache-dir: "~/.cache/rofi/";
+    cache-dir: "/home/vino/.cache/rofi/";
     kb-cancel: "Escape,Control+g,Control+bracketleft";
     kb-accept-entry: "Control+j,Control+m,Return,KP_Enter";
     kb-row-up: "Up,Control+p";
     kb-row-down: "Down,Control+n";
+    kb-mode-next: "Ctrl+Tab";
+    kb-mode-previous: "Shift+Tab";
     ml-row-up: "ScrollUp";
     ml-row-down: "ScrollDown";
+    //display-combi: "{promp}";
 }
+
+@theme "./themes/mytheme.rasi"

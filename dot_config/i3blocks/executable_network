@@ -22,11 +22,11 @@ status=""
 
 # Check if WLAN is connected
 if [ -n "$ssid" ]; then
-    status="<span color='#00FF00'>WLAN:</span> <span><span color='#FFA500'>[</span>$ssid<span color='#FFA500'>]</span></span> - <span color='#ff4ad5'>$wlan_ip_address</span>"
+    status="<span color='#4DB13D'>WLAN:</span> <span><span color='#E4A74A'>[</span>$ssid<span color='#E4A74A'>]</span></span> - <span color='#AC4242'>$wlan_ip_address</span>"
 elif [ -n "$eth_ip_address" ]; then
-    status="<span color='#00FF00'>ETH:</span> <span color='#ff4ad5'>$eth_ip_address</span>"
+    status="<span color='#4DB13D':>ETH:</span> <span color='#AC4242'>$eth_ip_address</span>"
 else
-    status="<span color='#ff3333'>NO_CONNECTION</span>"
+    status="<span color='#AC4242'>NO_CONNECTION</span>"
 fi
 
 # Print the status in Pango format
